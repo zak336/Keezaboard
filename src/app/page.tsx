@@ -1,103 +1,84 @@
-import Image from "next/image";
+// Bismillah - Starting Keeza UI Revamp
+// radial vhart for students failed and passed in subjects
+"use client"
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
+import Link from "next/link"
+import dynamic from "next/dynamic";
 
-export default function Home() {
+const COLORS = ["#4ade80", "#ef4444"] // Green for pass, red for fail
+
+const data = [
+  { name: "Jan", marks: 470 },
+  { name: "Feb", marks: 250 },
+  { name: "Mar", marks: 150 },
+  { name: "Apr", marks: 220 },
+  { name: "May", marks: 470 },
+  { name: "Jun", marks: 500 },
+  { name: "Jul", marks: 270 },
+  { name: "Aug", marks: 480 },
+  { name: "Sep", marks: 300 },
+  { name: "Oct", marks: 310 },
+  { name: "Nov", marks: 190 },
+  { name: "Dec", marks: 490 },
+]
+
+const performanceBrackets = [
+  { bracket: "90-100%", students: 12 },
+  { bracket: "80-89%", students: 28 },
+  { bracket: "70-79%", students: 60 },
+  { bracket: "60-69%", students: 70 },
+  { bracket: "<60%", students: 35 },
+]
+
+const pieData = [
+  { name: "Passed", value: 215 },
+  { name: "Failed", value: 25 },
+]
+
+const topPerformers = [
+  { name: "Ravi Kumar", score: "95%" },
+  { name: "Sneha Verma", score: "91%" },
+  { name: "Aarav Singh", score: "88%" },
+  { name: "Priya Patel", score: "85%" },
+  { name: "Rahul Meena", score: "84%" },
+  { name: "Anjali Deshmukh", score: "83%" },
+  { name: "Kartik Sinha", score: "81%" },
+  { name: "Neha Thakur", score: "80%" },
+  { name: "Yash Rawat", score: "78%" },
+  { name: "Isha Nair", score: "77%" },
+]
+
+export default function Dashboard() {
+  const [darkMode, setDarkMode] = useState(false)
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-neutral-900 dark flex flex-col items-center justify-center relative w-full h-screen px-4 gap-6">
+      <div className="z-10 text-center max-w-4xl space-y-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-neutral-950 via-white to-white">
+          Keezaboard
+        </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <p className="text-lg md:text-xl text-neutral-400 dark:text-neutral-300">
+          Personalized student performance dashboard.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
+          <Link href="/login"><Button className="px-8 py-6" variant="Login">Login</Button></Link>
+          <Link href="/register"><Button className="px-8 py-6" variant="Register">Register</Button></Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <p className="text-center text-lg md:text-2xl font-medium text-neutral-300 max-w-4xl px-4 leading-relaxed z-10">
+        Visualize your academic progress with <span className="text-yellow-500 font-semibold">Keezaboard</span>. Transform grades into insights, identify strengths, and focus your study efforts where they matter most—all in one clear, personalized view.
+      </p>
+
+      <ShootingStars />
+      <StarsBackground />
     </div>
-  );
+
+  )
 }
+
