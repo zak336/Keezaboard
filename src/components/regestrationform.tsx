@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
 export default function Page() {
-    const router = useRouter();
+    // const router = useRouter();
     const [formData, setFormData] = useState({
         firstname: "",
         lastname: "",
