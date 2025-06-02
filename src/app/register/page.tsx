@@ -1,5 +1,4 @@
 import React from "react";
-import { cn } from "@/lib/utils";
 import RegistrationForm from "@/components/regestrationform";
 import { AnimatedDots } from "@/components/animatedDots";
 

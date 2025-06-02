@@ -6,7 +6,7 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Link from "next/link"
 
-const COLORS = ["#4ade80", "#ef4444"] // Green for pass, red for fail
+
 
 export default function Dashboard() {
   return (
