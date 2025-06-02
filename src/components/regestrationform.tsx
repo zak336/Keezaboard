@@ -17,7 +17,7 @@ import {
     handleLoginGithub,
     handleLoginGoogle
 } from "@/components/oauthbutton";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
 export default function Page() {
