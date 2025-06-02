@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export function AnimatedDots() {
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile] = useState(false);
     return (
         <div className="absolute inset-0 z-0">
             {/* Top Right Dot */}

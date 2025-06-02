@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
-import Registrationform from "@/components/regestrationform";
+
 
 export function DotBackgroundDemo() {
   return (

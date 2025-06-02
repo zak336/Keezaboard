@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useUserContext } from "@/context/userContext";
 import { supabase } from "@/lib/supabaseClient";
+import type { User } from '@supabase/supabase-js';
 
 export const useSessionSync = () => {
     const router = useRouter();
@@ -55,7 +56,9 @@ export const useSessionSync = () => {
     }, [setUser, setLoading, router]);
 
     //  handle profile insert/update into your 'profiles' table
-    const handleUserUpsert = async (user: any) => {
+
+
+const handleUserUpsert = async (user: User) => {
         const { email, id, user_metadata } = user;
         const { full_name, name, picture, preferred_username } = user_metadata || {};
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Link} from '@nextui-org/react';
+import {Link} from '@nextui-org/react';
 import {Box} from '../styles/box';
 import dynamic from 'next/dynamic';
 import {Flex} from '../styles/flex';
@@ -10,6 +10,9 @@ import {CardBalance2} from './card-balance2';
 import {CardBalance3} from './card-balance3';
 import {CardAgents} from './card-agents';
 import {CardTransactions} from './card-transactions';
+import { Title } from '@nextui-org/react/title';
+
+
 
 const Chart = dynamic(
    () => import('../charts/steam').then((mod) => mod.Steam),
@@ -46,17 +49,17 @@ export const Content = () => (
          >
             {/* Card Section Top */}
             <Box>
-               <Text
+               <Title
                   h3
                   css={{
-                     'textAlign': 'center',
+                     'TitleAlign': 'center',
                      '@sm': {
-                        textAlign: 'inherit',
+                        TitleAlign: 'inherit',
                      },
                   }}
                >
                   Available Balance
-               </Text>
+               </Title>
                <Flex
                   css={{
                      'gap': '$10',
@@ -76,17 +79,17 @@ export const Content = () => (
 
             {/* Chart */}
             <Box>
-               <Text
+               <Title
                   h3
                   css={{
-                     'textAlign': 'center',
+                     'TitleAlign': 'center',
                      '@lg': {
-                        textAlign: 'inherit',
+                        TitleAlign: 'inherit',
                      },
                   }}
                >
                   Statistics
-               </Text>
+               </Title>
                <Box
                   css={{
                      width: '100%',
@@ -113,17 +116,17 @@ export const Content = () => (
                'overflow': 'hidden',
             }}
          >
-            <Text
+            <Title
                h3
                css={{
-                  'textAlign': 'center',
+                  'TitleAlign': 'center',
                   '@lg': {
-                     textAlign: 'inherit',
+                     TitleAlign: 'inherit',
                   },
                }}
             >
                Section
-            </Text>
+            </Title>
             <Flex
                direction={'column'}
                justify={'center'}
@@ -159,25 +162,25 @@ export const Content = () => (
          }}
       >
          <Flex justify={'between'} wrap={'wrap'}>
-            <Text
+            <Title
                h3
                css={{
-                  'textAlign': 'center',
+                  'TitleAlign': 'center',
                   '@lg': {
-                     textAlign: 'inherit',
+                     TitleAlign: 'inherit',
                   },
                }}
             >
                Latest Users
-            </Text>
+            </Title>
             <NextLink href="/accounts">
                <Link
                   block
                   color="primary"
                   css={{
-                     'textAlign': 'center',
+                     'TitleAlign': 'center',
                      '@lg': {
-                        textAlign: 'inherit',
+                        TitleAlign: 'inherit',
                      },
                   }}
                >

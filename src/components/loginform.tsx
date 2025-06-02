@@ -44,7 +44,7 @@ export default function LoginForm() {
             return;
         }
     
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { error } = await supabase.auth.signInWithPassword({ //it was like {data, error}, if we get error you know what todo
             email,
             password,
         });
