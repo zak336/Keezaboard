@@ -11,22 +11,22 @@ import dynamic from "next/dynamic";
 
 const COLORS = ["#4ade80", "#ef4444"] // Green for pass, red for fail
 
-const data = [
-  { name: "Jan", marks: 470 },
-  { name: "Feb", marks: 250 },
-  { name: "Mar", marks: 150 },
-  { name: "Apr", marks: 220 },
-  { name: "May", marks: 470 },
-  { name: "Jun", marks: 500 },
-  { name: "Jul", marks: 270 },
-  { name: "Aug", marks: 480 },
-  { name: "Sep", marks: 300 },
-  { name: "Oct", marks: 310 },
-  { name: "Nov", marks: 190 },
-  { name: "Dec", marks: 490 },
+export const data = [
+  { name: "Aisha", marks: 470 },
+  { name: "Kunal", marks: 250 },
+  { name: "Fatima", marks: 150 },
+  { name: "Rohan", marks: 220 },
+  { name: "Nalini", marks: 470 },
+  { name: "Sahil", marks: 500 },
+  { name: "Jaspreet", marks: 270 },
+  { name: "Ayush", marks: 480 },
+  { name: "Zainab", marks: 300 },
+  { name: "Vivek", marks: 310 },
+  { name: "Mclin", marks: 190 },
+  { name: "Siddharth", marks: 490 },
 ]
 
-const performanceBrackets = [
+export  const performanceBrackets = [
   { bracket: "90-100%", students: 12 },
   { bracket: "80-89%", students: 28 },
   { bracket: "70-79%", students: 60 },
@@ -34,12 +34,12 @@ const performanceBrackets = [
   { bracket: "<60%", students: 35 },
 ]
 
-const pieData = [
+export  const pieData = [
   { name: "Passed", value: 215 },
   { name: "Failed", value: 25 },
 ]
 
-const topPerformers = [
+export  const topPerformers = [
   { name: "Ravi Kumar", score: "95%" },
   { name: "Sneha Verma", score: "91%" },
   { name: "Aarav Singh", score: "88%" },
